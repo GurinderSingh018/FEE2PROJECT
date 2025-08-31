@@ -170,6 +170,26 @@
     .book-btn:hover {
       background: #0056b3;
     }
+    .btnm{
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+    }
+    .btnm button{
+      display: inline-block;
+      background: #2e69ff;
+      color: #ebe6e6;
+      text-decoration: none;
+      font-size:large;
+      font-weight: bold;
+      padding: 20px 30px;
+      border-radius: 13px;
+      cursor: pointer;
+      transition: transition 0.3s;
+    }
+    .btnm button:hover {
+      transform: translateY(-8px);
+    }
      h1 {
       text-align: center;
       color: #333;
@@ -272,11 +292,11 @@
   <div class="head">
     <div class="nameh">Taj Hotel</div>
     <div class="menu">
-    <div>Home</div>
-    <div>Rooms</div>
-    <div>Facilities</div>
-    <div>Contact us</div>
-    <div>About</div>
+    <a href="">Home</a>
+    <a href="rooms.html">rooms</a>
+    <a href="">Facilities</a>
+    <a href="">Contact us</a>
+    
     </div>
     <div class="buttons">
   <button class="buttonh" onclick="window.location.href='SIGN.html'">Login</button>
@@ -348,6 +368,9 @@
       </div>
     </div>
   </div>
+  <div class="btnm">
+  <button onclick="window.location.href='rooms.html'"  >More Rooms >></button>
+</div>
   <h1>Our Hotel Facilities</h1>
   <div class="facilities">
     <div class="facility-card">

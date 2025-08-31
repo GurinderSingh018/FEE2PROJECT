@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hotel Rooms</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    /* Grid for room cards */
+    .rooms {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+    }
+
+    /* Single room card */
+    .room {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      transition: 0.3s ease;
+    }
+
+    .room:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 14px rgba(0,0,0,0.15);
+    }
+
+    .room img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .info {
+      padding: 15px;
+    }
+
+    .info h2 {
+      margin: 0 0 8px;
+      font-size: 1.1rem;
+      color: #0077cc;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #28a745;
+      margin-bottom: 10px;
+    }
+
+    .features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 15px;
+      font-size: 0.9rem;
+      color: #555;
+    }
+
+    .features li {
+      margin-bottom: 5px;
+    }
+
+    .book {
+      display: inline-block;
+      padding: 8px 12px;
+      background: #0077cc;
+      color: #fff;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .book:hover {
+      background: #005fa3;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Our Rooms</h1>
+
+  <div class="rooms">
+    <!-- Room 1 -->
+    <div class="room">
+      <img src="room1.jpg" alt="Deluxe Room">
+      <div class="info">
+        <h2>Deluxe Room</h2>
+        <p class="price">₹3,500 / night</p>
+        <ul class="features">
+          <li>1 King Bed</li>
+          <li>Free Wi-Fi</li>
+          <li>Breakfast Included</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room">
+      <img src="room2.png" alt="Executive Suite">
+      <div class="info">
+        <h2>Executive Suite</h2>
+        <p class="price">₹5,800 / night</p>
+        <ul class="features">
+          <li>Private Balcony</li>
+          <li>Mini Bar</li>
+          <li>Spacious Living Area</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room">
+      <img src="room3.png" alt="Family Room">
+      <div class="info">
+        <h2>Family Room</h2>
+        <p class="price">₹4,200 / night</p>
+        <ul class="features">
+          <li>2 Queen Beds</li>
+          <li>Garden View</li>
+          <li>Complimentary Dinner</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Room 4 -->
+    <div class="room">
+      <img src="room4.jpg" alt="Presidential Suite">
+      <div class="info">
+        <h2>Presidential Suite</h2>
+        <p class="price">₹12,000 / night</p>
+        <ul class="features">
+          <li>Luxury Interiors</li>
+          <li>Private Pool</li>
+          <li>Butler Service</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Room 5 -->
+    <div class="room">
+      <img src="room5.jpg" alt="Standard Room">
+      <div class="info">
+        <h2>Standard Room</h2>
+        <p class="price">₹2,200 / night</p>
+        <ul class="features">
+          <li>1 Double Bed</li>
+          <li>Work Desk</li>
+          <li>Free Wi-Fi</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Room 6 -->
+    <div class="room">
+      <img src="room6.jpg" alt="Luxury Suite">
+      <div class="info">
+        <h2>Luxury Suite</h2>
+        <p class="price">₹7,500 / night</p>
+        <ul class="features">
+          <li>Jacuzzi</li>
+          <li>Sea View</li>
+          <li>King Bed + Sofa</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Room 7 -->
+    <div class="room">
+      <img src="room7.jpg" alt="Twin Room">
+      <div class="info">
+        <h2>Twin Room</h2>
+        <p class="price">₹2,800 / night</p>
+        <ul class="features">
+          <li>2 Single Beds</li>
+          <li>Smart TV</li>
+          <li>Free Breakfast</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <!-- Room 8 -->
+    <div class="room">
+      <img src="room8.jpg" alt="Studio Apartment">
+      <div class="info">
+        <h2>Studio Apartment</h2>
+        <p class="price">₹6,000 / night</p>
+        <ul class="features">
+          <li>Kitchenette</li>
+          <li>Living Room</li>
+          <li>Extended Stay Option</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+  
+    <div class="room">
+      <img src="room9.jpg" alt="Heritage Room">
+      <div class="info">
+        <h2>Heritage Room</h2>
+        <p class="price">₹4,800 / night</p>
+        <ul class="features">
+          <li>Classic Wooden Furniture</li>
+          <li>Courtyard View</li>
+          <li>Traditional Decor</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+
+    <div class="room">
+      <img src="room10.jpg" alt="Honeymoon Suite">
+      <div class="info">
+        <h2>Honeymoon Suite</h2>
+        <p class="price">₹9,500 / night</p>
+        <ul class="features">
+          <li>Private Jacuzzi</li>
+          <li>Romantic Lighting</li>
+          <li>Complimentary Wine</li>
+        </ul>
+        <a href="#" class="book">Book Now</a>
+      </div>
+    </div>
+  </div>
+   
+      
+
+</body>
+</html>
