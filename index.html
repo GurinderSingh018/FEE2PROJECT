@@ -53,17 +53,17 @@
       gap: 15px;
     }
         .buttonh {
-      display: inline-block;       /* makes <a> behave like button */
+      display: inline-block;     
       padding: 5px 15px;
       height: 35px;
-      line-height: 35px;           /* vertically center text */
+      line-height: 35px;           
       cursor: pointer;
       border-radius: 5px;
       border: 2px solid #c9a227;
       background: transparent;
       color: #c9a227;
       font-weight: bold;
-      text-decoration: none;       /* remove underline from links */
+      text-decoration: none;      
       text-align: center;
       transition: 0.3s;
     }
@@ -75,6 +75,7 @@
     .hero{
       position: relative;
       margin-top: 70px;
+      z-index: 800;
     }
     .hero img{
       width: 100%;
@@ -118,6 +119,7 @@
       border-radius: 15px;
       box-shadow: 0 5px 15px rgba(0,0,0,0.2);
       text-align: center;
+      z-index: 1000;
     }
     .search-bar {
       display: flex;
@@ -352,7 +354,7 @@
   <div class="hero" id="home">
     <img src="pexels-pixabay-258154.jpg" alt="hotel">
     <div class="hero-text">
-      <h1>Luxury Redefined</h1>
+      <h1>Check-InPro</h1>
       <p>Your comfort, our priority.</p>
       <button class="cta">Book Now</button>
     </div>
@@ -376,7 +378,6 @@
     </form>
   </div>
 
-  <!-- Rooms -->
   <h1 class="section-title" id="rooms">Our Rooms</h1>
   <div class="rooms">
     <div class="room-box">
@@ -423,7 +424,7 @@
     </div>
   </div>
 
-  <!-- Facilities -->
+
   <h1 class="section-title" id="facilities">Our Hotel Facilities</h1>
   <div class="facilities">
     <div class="facility-card">
@@ -453,7 +454,6 @@
     </div>
   </div>
 
-  <!-- About -->
   <h1 class="section-title" id="about">About Us</h1>
   <div class="about">
     <img src="OFFICINE - Picture gallery 15.jpg" alt="Hotel Lobby">
@@ -463,7 +463,6 @@
     </div>
   </div>
 
-  <!-- Gallery -->
   <h1 class="section-title">Gallery</h1>
   <div class="gallery">
     <img src="✨ Hotel Lobby Ambience 🎧 Hotel Background Noise✨.jpg" alt="Hotel view">
@@ -472,7 +471,8 @@
     <img src="FLARE Spa Pool with Evening View.jpg" alt="Pool">
   </div>
 
-  <!-- Testimonials -->
+
+  
   <h1 class="section-title">What Our Guests Say</h1>
   <div class="testimonials">
     <p class="testimonial">“Amazing experience! The staff was extremely courteous and the rooms were spotless.” – Riya Sharma</p>
@@ -480,7 +480,7 @@
     <p class="testimonial">“Best hotel stay I've had in years. 5 stars!” – Kavita Rao</p>
   </div>
 
-  <!-- Contact -->
+
   <div class="reach-us">
     <div class="map">
       <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57163.022094785476!2d76.62280705846831!3d30.481215842561284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1756618418559!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
