@@ -34,7 +34,6 @@
       display: flex;
       gap: 20px;
       font-size: medium;
-      
     }
     .menu a{
       text-decoration: none;
@@ -44,8 +43,9 @@
       transition: background 0.3s;
     }
     .menu a:hover, .menu a.active {
-     background: #c9a227; 
-     color: #00274d;}
+      background: #c9a227; 
+      color: #00274d;
+    }
 
     .buttons {
       margin-left: auto;
@@ -53,21 +53,20 @@
       gap: 15px;
     }
     .buttonh {
-  padding: 5px 15px;
-  height: 35px;
-  cursor: pointer;
-  border-radius: 5px;
-  border: 2px solid #c9a227;
-  background: transparent;
-  color: #c9a227;
-  font-weight: bold;
-}
-.buttonh:hover {
-  background: #c9a227;
-  color: #00274d;
-}
+      padding: 5px 15px;
+      height: 35px;
+      cursor: pointer;
+      border-radius: 5px;
+      border: 2px solid #c9a227;
+      background: transparent;
+      color: #c9a227;
+      font-weight: bold;
+    }
+    .buttonh:hover {
+      background: #c9a227;
+      color: #00274d;
+    }
 
-    /* Hero */
     .hero{
       position: relative;
       margin-top: 70px;
@@ -106,7 +105,6 @@
       font-size: 18px;
     }
 
-    /* Booking */
     .book-container {
       margin: -80px 40px 40px;
       padding: 20px;
@@ -133,23 +131,23 @@
     .btn {
       padding: 10px 25px;
       font-size: 1rem;
-        background-color: #00274d;
-  color: #f8f6f0;
+      background-color: #00274d;
+      color: #f8f6f0;
       border: none;
       border-radius: 8px;
       cursor: pointer;
     }
-    .btn:hover{background: #c9a227;
-  color: #00274d;}
+    .btn:hover{
+      background: #c9a227;
+      color: #00274d;
+    }
 
-    /* Sections */
     h1.section-title {
       text-align: center;
       color: #00274d;
       margin: 60px 0 40px;
     }
 
-    /* Rooms */
     .rooms {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -161,13 +159,6 @@
       border-radius: 12px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       overflow: hidden;
-      transition: transform 0.6s ease, opacity 0.6s ease;
-      opacity: 0;
-      transform: translateY(40px);
-    }
-    .room-box.visible {
-      opacity: 1;
-      transform: translateY(0);
     }
     .room-box img { width: 100%; height: 200px; object-fit: cover; }
     .room-content { padding: 15px; }
@@ -176,28 +167,27 @@
     .book-btn {
       display: inline-block;
       background: #00274d;
-  color: #f8f6f0;
+      color: #f8f6f0;
       text-decoration: none;
       padding: 10px 15px;
       border-radius: 6px;
       transition: background 0.3s;
     }
-    .book-btn:hover { background: #c9a227;
-  color: #00274d; }
+    .book-btn:hover { 
+      background: #c9a227;
+      color: #00274d; 
+    }
 
-    /* Facilities */
     .facilities {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
       gap: 20px;
       margin: 0 20px;
     }
-    .facility-card h2 {
-  color: #00274d;
-}
+    .facility-card h2 { color: #00274d; }
     .facility-card {
       background: #fff;
-  border: 1px solid #eee;
+      border: 1px solid #eee;
       border-radius: 14px;
       padding: 25px 20px;
       text-align: center;
@@ -207,7 +197,6 @@
     .facility-card:hover { transform: translateY(-6px); }
     .facility-card img { width: 60px; height: 60px; margin-bottom: 15px; }
 
-    /* About */
     .about {
       display: flex;
       gap: 30px;
@@ -220,97 +209,83 @@
     }
     .about img{width:300px; border-radius:10px;}
     .about-text{max-width:600px;}
-    .about h2 {
-  color: #00274d;
-}
+    .about h2 { color: #00274d; }
 
-    /* Gallery */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
       gap: 10px;
       margin: 20px;
     }
-    
     .gallery img {
-  width: 100%;
-  height: 250px; /* fixed height for uniform look */
-  object-fit: cover;
-  border-radius: 8px;
-}
+      width: 100%;
+      height: 250px; 
+      object-fit: cover;
+      border-radius: 8px;
+    }
 
-/* Reach Us Section */
-.reach-us {
-  display: flex;
-  gap: 20px;
-  flex-wrap: wrap;
-  margin: 40px 20px;
-}
+    .reach-us {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin: 40px 20px;
+    }
+    .map {
+      flex: 2;
+      min-width: 300px;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    }
+    .contact-info {
+      flex: 1;
+      min-width: 250px;
+      background: #fff;
+      padding: 25px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-left: 5px solid #c9a227;
+    }
+    .contact-info h3 {
+      color: #00274d;
+      margin-bottom: 10px;
+    }
+    .contact-info p {
+      margin: 5px 0;
+      font-size: 15px;
+      color: #333;
+    }
+    .social-links {
+      margin-top: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .social-links a {
+      text-decoration: none;
+      font-weight: bold;
+      color: #00274d;
+      background: #f8f6f0;
+      padding: 8px 12px;
+      border-radius: 6px;
+      border: 1px solid #c9a227;
+      transition: 0.3s;
+    }
+    .social-links a:hover {
+      background: #c9a227;
+      color: #00274d;
+    }
 
-.map {
-  flex: 2;
-  min-width: 300px;
-  border-radius: 12px;
-  overflow: hidden;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-}
+    .footer {
+      background-color: #00274d;
+      color: #f8f6f0;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+      font-size: 14px;
+      border-top: 3px solid #c9a227;
+    }
 
-.contact-info {
-  flex: 1;
-  min-width: 250px;
-  background: #fff;
-  padding: 25px 20px;
-  border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  border-left: 5px solid #c9a227; /* gold accent */
-}
-
-.contact-info h3 {
-  color: #00274d; /* deep navy */
-  margin-bottom: 10px;
-}
-
-.contact-info p {
-  margin: 5px 0;
-  font-size: 15px;
-  color: #333;
-}
-
-.social-links {
-  margin-top: 10px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.social-links a {
-  text-decoration: none;
-  font-weight: bold;
-  color: #00274d;
-  background: #f8f6f0; /* cream background */
-  padding: 8px 12px;
-  border-radius: 6px;
-  border: 1px solid #c9a227;
-  transition: 0.3s;
-}
-
-.social-links a:hover {
-  background: #c9a227;
-  color: #00274d;
-}
-
-/* Footer */
-.footer {
-  background-color: #00274d;
-  color: #f8f6f0;
-  text-align: center;
-  padding: 20px;
-  margin-top: 40px;
-  font-size: 14px;
-  border-top: 3px solid #c9a227;
-}
-
-    /* Testimonials */
     .testimonials {
       background: #fff;
       padding: 40px 20px;
@@ -319,33 +294,14 @@
       box-shadow: 0 4px 8px rgba(0,0,0,0.1);
       border-left: 5px solid #c9a227;
       text-align: center;
-      position: relative;
-      overflow: hidden;
     }
     .testimonial { 
-      display: none; 
       font-size: 1.1rem; 
-       color: #333;
-  font-style: italic;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      transform: translate(-50%, -50%);
-      width: 80%;
-    }
-    .testimonial.active{ 
-      display: block; 
-      opacity: 1;
+      color: #333;
+      font-style: italic;
+      margin: 10px 0;
     }
 
-    /* Contact */
-    .reach-us { display: flex; gap: 20px; flex-wrap: wrap; margin: 20px; }
-    .map { flex: 2; min-width: 300px; }
-    .contact-info { flex: 1; min-width: 250px;   background: #fff;
-  border-left: 4px solid #c9a227; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
-    .contact-form { margin-top: 20px; }
     .contact-form input, .contact-form textarea {
       width: 100%;
       padding: 10px;
@@ -358,135 +314,16 @@
       width: 100%;
       border: none;
       background: #00274d;
-  color: #f8f6f0;
+      color: #f8f6f0;
       border-radius: 6px;
       cursor: pointer;
     }
     .contact-form button:hover {
-  background: #c9a227;
-  color: #00274d;
-}
-
-    /* Footer */
-    .footer{
-      background-color: #00274d;
-  color: #f8f6f0;
-      text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+      background: #c9a227;
+      color: #00274d;
     }
-    .footer-links{margin:10px 0;}
-    .footer-links a{color: #c9a227; margin:0 10px; text-decoration:none;}
   </style>
 </head>
-<!-- Chatbot Widget -->
-<div id="chatbot">
-  <div id="chat-header">💬 FAQ Chat</div>
-  <div id="chat-body">
-    <p><b>Hi! 👋</b> How can I help you today?</p>
-    <button onclick="reply('What are check-in and check-out times?')">Check-in/out</button>
-    <button onclick="reply('Do you offer free Wi-Fi?')">Wi-Fi</button>
-    <button onclick="reply('What dining options are available?')">Dining</button>
-  </div>
-</div>
-
-<style>
-  /* Chatbot styles */
-  #chatbot {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    width: 280px;
-    background: #fff;
-    border: 2px solid #c9a227; /* gold border */
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
-    font-family: Arial, sans-serif;
-    overflow: hidden;
-    display: none; /* hidden by default */
-    z-index: 2000;
-  }
-  #chat-header {
-    background: #00274d; /* navy */
-    color: #f8f6f0;
-    padding: 10px;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  #chat-body {
-    padding: 15px;
-    font-size: 14px;
-    color: #333;
-  }
-  #chat-body button {
-    display: block;
-    margin: 8px 0;
-    padding: 8px;
-    width: 100%;
-    border: none;
-    border-radius: 6px;
-    background: #c9a227;
-    color: #00274d;
-    font-weight: bold;
-    cursor: pointer;
-  }
-  #chat-body button:hover {
-    background: #a6811f;
-    color: #fff;
-  }
-  /* Floating Chat Icon */
-  #chat-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    background: #00274d;
-    color: #f8f6f0;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 28px;
-    cursor: pointer;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-    z-index: 2001;
-  }
-</style>
-
-<div id="chat-icon">💬</div>
-
-<script>
-  const chatIcon = document.getElementById("chat-icon");
-  const chatbot = document.getElementById("chatbot");
-  const chatHeader = document.getElementById("chat-header");
-  const chatBody = document.getElementById("chat-body");
-
-  chatIcon.addEventListener("click", () => {
-    chatbot.style.display = "block";
-    chatIcon.style.display = "none";
-  });
-
-  chatHeader.addEventListener("click", () => {
-    chatbot.style.display = "none";
-    chatIcon.style.display = "flex";
-  });
-
-  function reply(question) {
-    let answer = "";
-    if (question.includes("check-in")) {
-      answer = "Check-in is from 2 PM, and check-out is until 12 PM.";
-    } else if (question.includes("Wi-Fi")) {
-      answer = "Yes, we offer free high-speed Wi-Fi throughout the hotel.";
-    } else if (question.includes("Dining")) {
-      answer = "We have a multi-cuisine restaurant, a rooftop café, and 24/7 room service.";
-    } else {
-      answer = "Sorry, I don’t have info on that yet.";
-    }
-    chatBody.innerHTML += `<p><b>You:</b> ${question}</p><p><b>Bot:</b> ${answer}</p>`;
-    chatBody.scrollTop = chatBody.scrollHeight;
-  }
-</script>
 
 <body>
   <div class="head">
@@ -499,8 +336,8 @@
       <a href="#contact">Contact</a>
     </div>
     <div class="buttons">
-      <button class="buttonh" onclick="window.location.href='SIGN.html'">Login</button>
-      <button class="buttonh" onclick="window.location.href='SIGN.html'">Register</button>
+      <button class="buttonh">Login</button>
+      <button class="buttonh">Register</button>
     </div>
   </div>
 
@@ -618,7 +455,6 @@
       <p>The Taj Hotel has been redefining luxury since its inception. With world-class service, modern amenities, and a dedication to guest satisfaction, we ensure every stay is unforgettable.</p>
     </div>
   </div>
-  
 
   <!-- Gallery -->
   <h1 class="section-title">Gallery</h1>
@@ -632,18 +468,18 @@
   <!-- Testimonials -->
   <h1 class="section-title">What Our Guests Say</h1>
   <div class="testimonials">
-    <p class="testimonial active">“Amazing experience! The staff was extremely courteous and the rooms were spotless.” – Riya Sharma</p>
+    <p class="testimonial">“Amazing experience! The staff was extremely courteous and the rooms were spotless.” – Riya Sharma</p>
     <p class="testimonial">“Loved the food and spa services. Definitely coming back!” – Arjun Mehta</p>
     <p class="testimonial">“Best hotel stay I've had in years. 5 stars!” – Kavita Rao</p>
   </div>
+
+  <!-- Contact -->
   <div class="reach-us">
-  
     <div class="map">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57163.022094785476!2d76.62280705846831!3d30.481215842561284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1756618418559!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d57163.022094785476!2d76.62280705846831!3d30.481215842561284!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fc32344a6e2d7%3A0x81b346dee91799ca!2sChitkara%20University!5e0!3m2!1sen!2sin!4v1756618418559!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
     </div>
 
-
-    <div class="contact-info">
+     <div class="contact-info">
       <h3>Call us</h3>
       <p>📞 +91 7778889991</p>
       <p>📞 +91 7778889992</p>
@@ -659,29 +495,5 @@
   <div class="footer">
     Designed and developed by  
   </div>
-
-  <!-- Scripts -->
-  <script>
-    // Auto-slide testimonials
-    const testimonials = document.querySelectorAll(".testimonial");
-    let currentTestimonial = 0;
-    setInterval(() => {
-      testimonials[currentTestimonial].classList.remove("active");
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      testimonials[currentTestimonial].classList.add("active");
-    }, 4000);
-
-    // Animate rooms on scroll
-    const roomCards = document.querySelectorAll(".room-box");
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add("visible");
-        }
-      });
-    }, { threshold: 0.2 });
-
-    roomCards.forEach(card => observer.observe(card));
-  </script>
 </body>
 </html>
