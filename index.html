@@ -52,15 +52,20 @@
       display: flex;
       gap: 15px;
     }
-    .buttonh {
+        .buttonh {
+      display: inline-block;       /* makes <a> behave like button */
       padding: 5px 15px;
       height: 35px;
+      line-height: 35px;           /* vertically center text */
       cursor: pointer;
       border-radius: 5px;
       border: 2px solid #c9a227;
       background: transparent;
       color: #c9a227;
       font-weight: bold;
+      text-decoration: none;       /* remove underline from links */
+      text-align: center;
+      transition: 0.3s;
     }
     .buttonh:hover {
       background: #c9a227;
@@ -335,10 +340,11 @@
       <a href="#about">About</a>
       <a href="#contact">Contact</a>
     </div>
-    <div class="buttons">
-      <button class="buttonh">Login</button>
-      <button class="buttonh">Register</button>
+      <div class="buttons">
+      <a href="SIGN.html" class="buttonh">Login</a>
+      <a  class="buttonh">Register</a>
     </div>
+
 
   </div>
 
