@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Taj Hotel — Room Booking</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Poppins", Arial, sans-serif;
+      background: linear-gradient(135deg, #f8f5f0, #f3e9d2, #fff8e7);
+      color: #1f2937;
+    }
+
+    header {
+      background: linear-gradient(90deg, #00274d, #00386d);
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.5rem;
+      letter-spacing: 1px;
+      position: relative;
+    }
+
+    .home-btn {
+      position: absolute;
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: #c9a227;
+      color: #00274d;
+      padding: 0.4rem 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .home-btn:hover {
+      background: white;
+      color: #00274d;
+      transform: translateY(-50%) scale(1.05);
+    }
+
+    .container {
+      max-width: 700px;
+      margin: 3rem auto;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+      border: 2px solid #e0c873;
+    }
+
+    h2 {
+      text-align: center;
+      color: #00274d;
+      margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    form {
+      display: grid;
+      gap: 1rem;
+    }
+
+    label {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 0.7rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      background: linear-gradient(90deg, #00274d, #004c8a);
+      color: white;
+      border: none;
+      padding: 0.9rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: linear-gradient(90deg, #c9a227, #f5d46b);
+      color: #00274d;
+      transform: scale(1.03);
+    }
+
+    .confirmation, .payment-section {
+      margin-top: 2rem;
+      text-align: center;
+      animation: fadeIn 0.6s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .payment-section {
+      background: #fff9e6;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: 1px solid #e0c873;
+      display: none;
+    }
+
+    .payment-methods {
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+    }
+
+    .method-btn {
+      padding: 0.6rem 1.2rem;
+      border: 2px solid #c9a227;
+      border-radius: 8px;
+      cursor: pointer;
+      background: white;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    .method-btn:hover, .method-btn.active {
+      background: #c9a227;
+      color: white;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    .price-tag {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: #00274d;
+      margin-bottom: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <button class="home-btn" onclick="window.location.href='index.html'">🏠 Home</button>
+    TAJ HOTEL — Room Booking
+  </header>
+
+  <div class="container">
+    <h2>Book Your Stay</h2>
+
+    <form id="bookingForm">
+      <label>Full Name</label>
+      <input type="text" id="name" required>
+
+      <label>Email</label>
+      <input type="email" id="email" required>
+
+      <label>Check-in Date</label>
+      <input type="date" id="checkin" required>
+
+      <label>Check-out Date</label>
+      <input type="date" id="checkout" required>
+
+      <label>Guests</label>
+      <select id="guests" required>
+        <option value="">Select</option>
+        <option>1 Guest</option>
+        <option>2 Guests</option>
+        <option>3 Guests</option>
+        <option>4 Guests</option>
+        <option>5+ Guests</option>
+      </select>
+
+      <label>Room Type</label>
+      <select id="room" required>
+        <option value="">Select</option>
+        <option>Deluxe Room</option>
+        <option>Executive Suite</option>
+        <option>Family Room</option>
+        <option>Presidential Suite</option>
+        <option>Standard Room</option>
+        <option>Luxury Suite</option>
+        <option>Twin Room</option>
+        <option>Studio Apartment</option>
+        <option>Heritage Room</option>
+        <option>Honeymoon Suite</option>
+      </select>
+
+      <textarea id="requests" rows="3" placeholder="Special requests (optional)"></textarea>
+
+      <button type="submit">Confirm Booking</button>
+    </form>
+
+    <div class="payment-section" id="paymentSection">
+      <h3>Proceed to Payment</h3>
+      <p class="price-tag" id="roomPrice"></p>
+
+      <div class="payment-methods">
+        <button class="method-btn" id="upiBtn">💰 UPI</button>
+        <button class="method-btn" id="cardBtn">💳 Card</button>
+      </div>
+
+      <div id="upiSection" class="hidden">
+        <label>Enter UPI ID</label>
+        <input type="text" id="upiId" placeholder="example@upi">
+        <button onclick="confirmPayment('UPI')">Pay Now</button>
+      </div>
+
+      <div id="cardSection" class="hidden">
+        <label>Card Number</label>
+        <input type="text" placeholder="1234 5678 9012 3456" maxlength="16">
+        <label>Expiry Date</label>
+        <input type="month">
+        <label>CVV</label>
+        <input type="password" maxlength="3" placeholder="123">
+        <button onclick="confirmPayment('Card')">Pay Now</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('bookingForm');
+    const paymentSection = document.getElementById('paymentSection');
+    const roomPrice = document.getElementById('roomPrice');
+
+    const upiBtn = document.getElementById('upiBtn');
+    const cardBtn = document.getElementById('cardBtn');
+    const upiSection = document.getElementById('upiSection');
+    const cardSection = document.getElementById('cardSection');
+
+    const roomPrices = {
+      "Deluxe Room": 3500,
+      "Executive Suite": 5800,
+      "Family Room": 4200,
+      "Presidential Suite": 12000,
+      "Standard Room": 2200,
+      "Luxury Suite": 7500,
+      "Twin Room": 2800,
+      "Studio Apartment": 6000,
+      "Heritage Room": 4800,
+      "Honeymoon Suite": 9500
+    };
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+
+      const roomType = document.getElementById('room').value;
+      if (!roomType) return alert("Please select a room type!");
+
+      const price = roomPrices[roomType];
+      roomPrice.textContent = `Room Selected: ${roomType} — ₹${price} / night`;
+
+      form.style.display = "none";
+      paymentSection.style.display = "block";
+    });
+
+    upiBtn.onclick = () => {
+      upiSection.classList.remove("hidden");
+      cardSection.classList.add("hidden");
+      upiBtn.classList.add("active");
+      cardBtn.classList.remove("active");
+    };
+
+    cardBtn.onclick = () => {
+      cardSection.classList.remove("hidden");
+      upiSection.classList.add("hidden");
+      cardBtn.classList.add("active");
+      upiBtn.classList.remove("active");
+    };
+
+    function confirmPayment(method) {
+      alert(`✅ Payment Successful via ${method}! Thank you for booking with Taj Hotel.`);
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>

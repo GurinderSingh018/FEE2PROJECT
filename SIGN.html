@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TAJ HOTEL — Member Sign In</title>
+  <title>TAJ HOTEL — Member Access</title>
   <style>
     body {
       margin: 0;
@@ -11,22 +11,57 @@
       background: linear-gradient(to bottom right, #f8fafc, #ffffff, #f1f5f9);
       color: #1f2937;
     }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #00274d;
+      color: white;
+      padding: 1rem 2rem;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    header .brand {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    header .nav-buttons a {
+      background: white;
+      color: #2563eb;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    header .nav-buttons a:hover {
+      background: #e9f3ff;
+      transform: scale(1.05);
+    }
+
     .container {
       display: grid;
       grid-template-columns: 1fr 1fr;
       min-height: 100vh;
     }
+
     .left {
       position: relative;
       background: url("https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?q=80&w=1920&auto=format&fit=crop") no-repeat center/cover;
       display: none;
     }
+
     .left::after {
       content: "";
       position: absolute;
       inset: 0;
       background: rgba(0,0,0,0.5);
     }
+
     .left-content {
       position: relative;
       z-index: 1;
@@ -37,16 +72,14 @@
       justify-content: space-between;
       height: 100%;
     }
-    .brand {
-      font-size: 2rem;
-      font-weight: bold;
-    }
+
     .right {
       display: flex;
       justify-content: center;
       align-items: center;
       padding: 2rem;
     }
+
     .card {
       background: white;
       padding: 2rem;
@@ -54,22 +87,27 @@
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
       max-width: 400px;
       width: 100%;
+      transition: all 0.3s ease;
     }
+
     h2 {
       margin-top: 0;
       text-align: center;
     }
+
     label {
       display: block;
       margin: 0.5rem 0 0.25rem;
       font-size: 0.9rem;
     }
+
     input {
       width: 100%;
       padding: 0.6rem;
       border: 1px solid #d1d5db;
       border-radius: 0.5rem;
     }
+
     .actions {
       display: flex;
       justify-content: space-between;
@@ -77,6 +115,7 @@
       font-size: 0.85rem;
       margin: 0.5rem 0 1rem;
     }
+
     .btn {
       width: 100%;
       padding: 0.75rem;
@@ -85,34 +124,53 @@
       cursor: pointer;
       font-weight: bold;
     }
+
     .btn-primary {
       background: #2563eb;
       color: white;
     }
+
     .btn-outline {
       background: white;
       border: 1px solid #d1d5db;
     }
+
     .text-center {
       text-align: center;
       margin-top: 1rem;
       font-size: 0.85rem;
       color: #6b7280;
     }
+
+    a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
     footer {
       text-align: center;
       padding: 1rem;
       font-size: 0.75rem;
       color: #6b7280;
     }
+
     @media (min-width: 992px) {
       .left { display: block; }
     }
   </style>
 </head>
 <body>
+
+ 
+  <header>
+    <div class="brand">TAJ HOTEL</div>
+    <div class="nav-buttons">
+      <a href="index.html">🏠 Home</a>
+    </div>
+  </header>
+
+
   <div class="container">
-  
     <div class="left">
       <div class="left-content">
         <div>
@@ -132,31 +190,56 @@
     </div>
 
     <div class="right">
-      <div class="card">
-        <h2>Member Sign In</h2>
-        <p style="text-align:center;font-size:0.85rem;color:#6b7280;">Sign in to your <b>TAJ HOTEL</b> membership.</p>
+      <div class="card" id="formBox">
+       
+        <div id="loginForm">
+          <h2>Member Sign In</h2>
+          <p style="text-align:center;font-size:0.85rem;color:#6b7280;">Sign in to your <b>TAJ HOTEL</b> membership.</p>
 
-        <!-- Email form only -->
-        <form>
-          <label for="email">Email address</label>
-          <input type="email" id="email" placeholder="you@example.com" required />
+          <form id="login">
+            <label for="loginEmail">Email address</label>
+            <input type="email" id="loginEmail" placeholder="you@example.com" required />
 
-          <label for="password1">Password</label>
-          <input type="password" id="password1" placeholder="Your password" required />
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="Your password" required />
 
-          <div class="actions">
-            <label><input type="checkbox" checked /> Remember me</label>
-            <a href="#">Forgot password?</a>
+            <div class="actions">
+              <label><input type="checkbox" checked /> Remember me</label>
+              <a href="#">Forgot password?</a>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Sign In</button>
+          </form>
+
+          <div class="text-center">Or</div>
+          <button class="btn btn-outline">Get OTP</button>
+
+          <div class="text-center">
+            New to TAJ HOTEL? <a href="#" onclick="toggleForm()">Create an account</a>
           </div>
+        </div>
 
-          <button type="submit" class="btn btn-primary">Sign In</button>
-        </form>
+      
+        <div id="registerForm" style="display:none;">
+          <h2>Create Account</h2>
+          <p style="text-align:center;font-size:0.85rem;color:#6b7280;">Join <b>TAJ HOTEL</b> Rewards & enjoy exclusive benefits.</p>
 
-        <div class="text-center">Or</div>
-        <button class="btn btn-outline">Get OTP</button>
+          <form id="register">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your full name" required />
 
-        <div class="text-center">
-          New to TAJ HOTEL? <a href="#">Create an account</a>
+            <label for="regEmail">Email address</label>
+            <input type="email" id="regEmail" placeholder="you@example.com" required />
+
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" placeholder="Create a password" required />
+
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+
+          <div class="text-center">
+            Already a member? <a href="#" onclick="toggleForm()">Sign In</a>
+          </div>
         </div>
       </div>
     </div>
@@ -165,5 +248,54 @@
   <footer>
     © 2025 TAJ HOTEL. All rights reserved. | <a href="#">Help</a> | <a href="#">Contact</a>
   </footer>
+
+  <script>
+    const loginForm = document.getElementById('loginForm');
+    const registerForm = document.getElementById('registerForm');
+
+    function toggleForm() {
+      if (loginForm.style.display === 'none') {
+        loginForm.style.display = 'block';
+        registerForm.style.display = 'none';
+      } else {
+        loginForm.style.display = 'none';
+        registerForm.style.display = 'block';
+      }
+    }
+
+    const users = JSON.parse(localStorage.getItem('tajUsers')) || [];
+
+    document.getElementById('register').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('regEmail').value.trim();
+      const pass = document.getElementById('regPassword').value.trim();
+
+      if (users.some(user => user.email === email)) {
+        alert('⚠️ This email is already registered. Please login.');
+        toggleForm();
+        return;
+      }
+
+      users.push({ name, email, pass });
+      localStorage.setItem('tajUsers', JSON.stringify(users));
+      alert('🎉 Registration successful! You can now sign in.');
+      toggleForm();
+    });
+
+    document.getElementById('login').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const email = document.getElementById('loginEmail').value.trim();
+      const pass = document.getElementById('loginPassword').value.trim();
+
+      const user = users.find(u => u.email === email && u.pass === pass);
+      if (user) {
+        alert(`✅ Welcome back, ${user.name}!`);
+        window.location.href = 'index.html';
+      } else {
+        alert('❌ Invalid email or password. Please try again.');
+      }
+    });
+  </script>
 </body>
 </html>
