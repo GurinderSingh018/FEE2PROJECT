@@ -113,16 +113,7 @@
       font-size: 18px;
     }
 
-    /* .book-container {
-      margin: -80px 40px 40px;
-      padding: 20px;
-      background: #fff;
-      border: 2px solid #c9a227;
-      border-radius: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-      text-align: center;
-      z-index: 1000;
-    } */
+    
     .search-bar {
       display: flex;
       flex-wrap: wrap;
@@ -444,23 +435,6 @@
     </div>
   </div>
 
-  
-  <!-- <div class="book-container">
-    <h1>CheckInPro</h1>
-    <p>Find curated rooms, transparent prices, and instant confirmation.</p>
-    <form class="search-bar" action="rooms.html" method="get">
-      <input class="input" type="date" name="checkin" required>
-      <input class="input" type="date" name="checkout" required>
-      <select name="guests" class="input">
-        <option value="1">1 guest</option>
-        <option value="2">2 guests</option>
-        <option value="3">3 guests</option>
-        <option value="4">4 guests</option>
-      </select>
-      <input class="input" type="text" placeholder="Promo Code (optional)">
-      <button class="btn" type="submit">Search</button>
-    </form>
-  </div> -->
 
   <h1 class="section-title" id="rooms">Our Rooms</h1>
   <div class="rooms">
@@ -637,6 +611,41 @@
     userInput.addEventListener("keypress", (e) => {
       if (e.key === "Enter") sendBtn.click();
     });
+  
+    const loggedUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+
+    if (loggedUser) {
+      const buttonsDiv = document.querySelector('.buttons');
+      buttonsDiv.innerHTML = `
+        <div class="user-icon" style="
+          display: flex;
+          margin-right: 30px;
+          align-items: center;
+          gap: 10px;
+          color: #c9a227;
+          font-weight: bold;
+          cursor: pointer;
+        ">
+          <span>👤 ${loggedUser.name.split(' ')[0]}</span>
+          <button id="logoutBtn" style="
+            background: transparent;
+            border: 1px solid #c9a227;
+            border-radius: 10px;
+            color: #c9a227;
+            padding: 5px 8px;
+            cursor: pointer;
+          ">Logout</button>
+        </div>
+      `;
+      
+      
+      document.getElementById('logoutBtn').addEventListener('click', () => {
+        localStorage.removeItem('loggedInUser');
+        location.reload(); 
+      });
+    }
+
 
 </script>
 </html>

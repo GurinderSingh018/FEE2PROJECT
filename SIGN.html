@@ -290,12 +290,18 @@
 
       const user = users.find(u => u.email === email && u.pass === pass);
       if (user) {
-        alert(`✅ Welcome back, ${user.name}!`);
-        window.location.href = 'index.html';
-      } else {
+      alert(`✅ Welcome back, ${user.name}!`);
+      localStorage.setItem('loggedInUser', JSON.stringify(user));
+      window.location.href = 'index.html';
+   }
+    else {
         alert('❌ Invalid email or password. Please try again.');
       }
     });
+    if (localStorage.getItem('loggedInUser')) {
+  window.location.href = 'index.html';
+}
+
   </script>
 </body>
 </html>
